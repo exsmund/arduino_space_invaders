@@ -21,8 +21,9 @@ Button buttonRight = Button(10, INPUT_PULLUP);
 // Switch programs
 // 1 - tank
 // 2 - flappybird
+// 3 - tetris
 int program = 0;
-int startProgram = 1;
+int startProgram = 3;
 
 void btnTankBottomHandler() {
   if (program == 1) {
@@ -59,11 +60,19 @@ void loop() {
     setupBird();  
     program = 2;
   }
+  if (startProgram == 3) {
+    startProgram = 0;
+    setupTetris();  
+    program = 3;
+  }
   if (program == 1) {
     loopTank();  
   }
   if (program == 2) {
     loopBird();  
+  }
+  if (program == 3) {
+    loopTetris();  
   }
   buttonBottom.isPressed();
 }
