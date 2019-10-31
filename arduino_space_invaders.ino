@@ -47,6 +47,9 @@ void setup() {
   display.setCursor(0,0);
   display.setRotation(2);
   buttonBottom.pressHandler(btnTankBottomHandler);
+
+  // Random setup
+  randomSeed(analogRead(0));
 }
 
 void loop() {
