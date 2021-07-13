@@ -475,6 +475,7 @@ void loopTetris() {
 
   if (tetrisTopPressed && tetrisBottomPressed) {
     pause = true;
+    figureDirectionClicked = 0;
   }
   if (!pause && millis() - lastTetrisDraw > TETRIS_DRAW_DELAY) {
     lastTetrisDraw = millis();
